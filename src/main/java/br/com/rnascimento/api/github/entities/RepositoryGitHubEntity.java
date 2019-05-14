@@ -1,9 +1,10 @@
-package br.com.rnascimento.api.github.dtos;
+package br.com.rnascimento.api.github.entities;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,21 +13,22 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+@Table(name = "repositoryGitHub")
+@Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class RepositoryGitHubDTO implements Serializable {
+public class RepositoryGitHubEntity implements Serializable{
 
 	public Long id;
 	public String nodeId;
 	public String name;
 	public String fullName;
 	public boolean _private;
-	public OwnerGitHubDTO owner;
+//	public OwnerGitHubDTO owner;
 	public String htmlUrl;
 	public String description;
 	public boolean fork;
@@ -89,10 +91,11 @@ public class RepositoryGitHubDTO implements Serializable {
 	public boolean archived;
 	public boolean disabled;
 	public Long openIssuesCount;
-	public LicenseGitHubDTO license;
+//	public LicenseGitHubDTO license;
 	public Long forks;
 	public Long openIssues;
 	public Long watchers;
 	public String defaultBranch;
 	public BigDecimal score;
+	
 }

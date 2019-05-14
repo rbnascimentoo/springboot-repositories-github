@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: br.com.rnascimento.api.github.repositories.RepositoriesApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.895 s <<< FAILURE! - in br.com.rnascimento.api.github.repositories.RepositoriesApplicationTests
+contextLoads(br.com.rnascimento.api.github.repositories.RepositoriesApplicationTests)  Time elapsed: 0.035 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: br.com.rnascimento.api.github.entities.RepositoryGitHubEntity
+Caused by: org.hibernate.AnnotationException: No identifier specified for entity: br.com.rnascimento.api.github.entities.RepositoryGitHubEntity
+
