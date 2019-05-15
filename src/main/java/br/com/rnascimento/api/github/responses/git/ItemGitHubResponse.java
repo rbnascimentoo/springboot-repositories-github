@@ -1,5 +1,6 @@
 package br.com.rnascimento.api.github.responses.git;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -19,7 +20,12 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ItemGitHubResponse {
+public class ItemGitHubResponse implements Serializable  {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3541035453186093455L;
 
 	@JsonProperty("id")
 	public Long id;

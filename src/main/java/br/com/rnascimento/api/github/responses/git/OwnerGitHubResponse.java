@@ -1,5 +1,7 @@
 package br.com.rnascimento.api.github.responses.git;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -17,7 +19,12 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OwnerGitHubResponse {
+public class OwnerGitHubResponse implements Serializable  {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2317209459272002283L;
 
 	@JsonProperty("login")
 	public String login;

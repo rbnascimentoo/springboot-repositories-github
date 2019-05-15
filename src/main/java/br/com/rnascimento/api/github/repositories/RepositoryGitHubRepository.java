@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import br.com.rnascimento.api.github.entities.RepositoryGitHubEntity;
 
 @Repository
-public interface GitHubRepository extends JpaRepository<RepositoryGitHubEntity, Long>{
+public interface RepositoryGitHubRepository extends JpaRepository<RepositoryGitHubEntity, Long> {
 
 }

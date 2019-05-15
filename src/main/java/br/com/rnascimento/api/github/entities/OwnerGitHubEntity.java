@@ -1,8 +1,11 @@
-package br.com.rnascimento.api.github.dtos;
+package br.com.rnascimento.api.github.entities;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,36 +14,56 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+@Table
+@Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class OwnerGitHubDTO implements Serializable {
+public class OwnerGitHubEntity implements Serializable{
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -517233008619696975L;
+	private static final long serialVersionUID = 8864614153940329652L;
 	
-	public String login;
+	@Id
 	public Long id;
+	@Column
+	public String login;
+	@Column
 	public String nodeId;
+	@Column
 	public String avatarUrl;
+	@Column
 	public String gravatarId;
+	@Column
 	public String url;
+	@Column
 	public String htmlUrl;
+	@Column
 	public String followersUrl;
+	@Column
 	public String followingUrl;
+	@Column
 	public String gistsUrl;
+	@Column
 	public String starredUrl;
+	@Column
 	public String subscriptionsUrl;
+	@Column
 	public String organizationsUrl;
+	@Column
 	public String reposUrl;
+	@Column
 	public String eventsUrl;
+	@Column
 	public String receivedEventsUrl;
+	@Column
 	public String type;
+	@Column
 	public boolean siteAdmin;
+	
 }

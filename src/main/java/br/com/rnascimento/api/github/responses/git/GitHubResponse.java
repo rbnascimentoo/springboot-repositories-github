@@ -1,5 +1,6 @@
 package br.com.rnascimento.api.github.responses.git;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -19,7 +20,12 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GitHubResponse {
+public class GitHubResponse implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8398438781583801207L;
 
 	@JsonProperty("total_count")
 	public Long totalCount;

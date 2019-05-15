@@ -21,6 +21,11 @@ import lombok.ToString;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RepositoryGitHubDTO implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4343873026252018206L;
+	
 	public Long id;
 	public String nodeId;
 	public String name;

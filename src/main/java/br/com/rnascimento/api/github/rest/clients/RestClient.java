@@ -8,5 +8,4 @@ public class RestClient {
 	public static RestTemplate getRestTemplateBuilder(String url) {
 		return new RestTemplateBuilder().rootUri(url).build();
 	}
-	
 }
