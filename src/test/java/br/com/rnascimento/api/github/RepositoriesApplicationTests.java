@@ -1,4 +1,4 @@
-package br.com.rnascimento.api.github.repositories;
+package br.com.rnascimento.api.github;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
