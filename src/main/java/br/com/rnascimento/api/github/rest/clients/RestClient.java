@@ -5,6 +5,12 @@ import org.springframework.web.client.RestTemplate;
 
 public class RestClient {
 
+	/**
+	 * Faz chamada a api através da URL passada.
+	 * 
+	 * @param url
+	 * @return
+	 */
 	public static RestTemplate getRestTemplateBuilder(String url) {
 		return new RestTemplateBuilder().rootUri(url).build();
 	}

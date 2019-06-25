@@ -15,6 +15,11 @@ private static ModelMapper modelMapper;
 		modelMapper();
     }
 	
+	/**
+	 * 
+	 * Inicia o modelMapper
+	 * 
+	 */
 	@Bean
 	public static void modelMapper() {
 		modelMapper = new ModelMapper();
@@ -24,6 +29,14 @@ private static ModelMapper modelMapper;
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 	}
 	
+	/**
+	 * Converte uma lista de um tipo para o outro
+	 * 
+	 * @param <T>
+	 * @param lista
+	 * @param classe
+	 * @return
+	 */
 	public static <T> List<T> converter(List<?> lista, Class<T> classe) {
         List<T> newList = new ArrayList<>();
         for (Object object : lista) {
@@ -32,6 +45,15 @@ private static ModelMapper modelMapper;
         return newList;
     }
 
+	/**
+	 * 
+	 * Converte um objeto de um tipo para o outro
+	 * 
+	 * @param <T>
+	 * @param object
+	 * @param classe
+	 * @return
+	 */
 	public static <T> T converter(Object object, Class<T> classe) {
         if(object == null) {
             return null;

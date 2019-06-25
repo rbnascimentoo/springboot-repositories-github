@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: repositories
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: rnascimento
+Built-By: Aluga.com
 Implementation-Vendor-Id: br.com.rnascimento.api.github
-Build-Jdk: 1.8.0_181
+Build-Jdk: 1.8.0_211
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/repositories
 Created-By: Maven Integration for Eclipse

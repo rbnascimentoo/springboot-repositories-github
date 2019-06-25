@@ -16,18 +16,18 @@ import br.com.rnascimento.api.github.services.GitHubService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@Api(value = "git")
+@Api(value = "github")
 @RestController
-@RequestMapping(value = "/git")
+@RequestMapping(value = "/github")
 public class GitHubResource {
 
 	@Autowired
 	private GitHubService gitHubService;
 	
 	@ApiOperation(value = "Busca todos os repositórios e salva-os na base.")
-	@GetMapping(path ="/", produces = MediaType.APPLICATION_JSON_VALUE)
-	public void buscarRepositoriosGitHub() {
-		this.gitHubService.buscarRepositoriosGitHub();
+	@GetMapping(path ="/repository/{language}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public void buscarRepositoriosGitHub(@PathVariable(value = "language") String language) {
+		this.gitHubService.buscarRepositoriosGitHub(language);
 	}
 	
 	@ApiOperation(value = "Obtém todos os repositórios.")
