@@ -5,9 +5,11 @@ API Java Rest Com Spring Boot para consumo de API do GitHub, onde é listado o t
 
 Esta API possui os seguintes serviços:
 
-Busca o top 5 repositorios de uma linguagem especifica do github.
-Lista os respectivos repositorios.
-Detalha um especifico repositorio por id.
+<li>
+<ul>Busca o top 5 repositorios de uma linguagem especifica do github.</ul>
+<ul>Lista os respectivos repositorios.</ul>
+<ul>Detalha um especifico repositorio por id.</ul>
+</li>
 
 Para executar o projeto as seguintes ferramentas devem estar instaladas:
 
