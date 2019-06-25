@@ -1,6 +1,5 @@
 package br.com.rnascimento.api.github.services;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,7 +40,7 @@ public class GitHubService {
 	/**
 	 *  Busca Repositorios GitHub
 	 */
-	@CacheEvict(allEntries = true, value = {"findAll", "findById"}, beforeInvocation = true)
+	@CacheEvict(allEntries = true, value = {"findAllRepositories", "findByIdRepository"}, beforeInvocation = true)
 	public void buscarRepositoriosGitHub(String language) {
 		
 		if(ObjectUtils.isEmpty(language)) {
@@ -79,15 +78,10 @@ public class GitHubService {
 	 * Obtem TOP 5 Repositorios GitHub já salvos na base.
 	 * @return
 	 */
-	@Cacheable("findAll")
+	@Cacheable("findAllRepositories")
 	public List<RepositoryGitHubDTO> obterTodosRepositoriosGitHub() {
 		LOG.info("### Listando o TOP 5 repositories ###");
-		
-		List<RepositoryGitHubEntity> list = this.gitHubRepository.findAll();
-		//Ordena os itens da lista de acordo com a quantidade de estrelas recebidas.
-		list.sort(Comparator.comparing(RepositoryGitHubEntity::getStargazersCount).reversed());
-		
-		return ModelMapperUtil.converter(list, RepositoryGitHubDTO.class);
+		return ModelMapperUtil.converter(this.gitHubRepository.findAll(), RepositoryGitHubDTO.class);
 	}
 
 	/**
@@ -96,7 +90,7 @@ public class GitHubService {
 	 * @param id
 	 * @return
 	 */
-	@Cacheable("findById")
+	@Cacheable("findByIdRepository")
 	public RepositoryGitHubDTO obterPorIdRepositoriosGitHub(Long id) {
 		LOG.info("### Obtendo o repository por Id ###");
 		RepositoryGitHubDTO repositoryGitHubDTO = new RepositoryGitHubDTO();

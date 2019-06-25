@@ -29,39 +29,20 @@ public class GitHubResourceTest {
 	private GitHubService gitHubService;
 	
 	@Test
-	public void notFindRepositories() {
-		
-		ResponseEntity<String> response = this.restTemplate.getForEntity("/github/repository/", String.class);
-		
-		Assert.assertEquals(response.getStatusCodeValue(), 500);
-	}
-	
-//	@Test
-//	public void findRepositories() {
-//		String language = "language";
-//		ResponseEntity<String> response = this.restTemplate.getForEntity("/github/repository/" + language, String.class);
-//		
-//		Assert.assertEquals(response.getStatusCodeValue(), 200);
-//	}
-	
-	@Test
-	public void findAll() {
-		List<RepositoryGitHubDTO> repositoryGitHubDTOList = Arrays.asList(RepositoryGitHubDTO.builder().id(1L).build(), RepositoryGitHubDTO.builder().id(2L).build());
+	public void deveObterTodosRepositories() {
+		List<RepositoryGitHubDTO> repositoryGitHubDTOList = Arrays.asList(RepositoryGitHubDTO.builder().id(1L).build(), 
+				RepositoryGitHubDTO.builder().id(2L).build());
 		BDDMockito.when(this.gitHubService.obterTodosRepositoriosGitHub()).thenReturn(repositoryGitHubDTOList);
-		
 		ResponseEntity<String> response = this.restTemplate.getForEntity("/github/obterTodos", String.class);
-		
 		Assert.assertEquals(response.getStatusCodeValue(), 200);
 	}
 	
 	@Test
-	public void findById() {
+	public void devObterRepositoryPorId() {
 		Long id = 1L;
 		RepositoryGitHubDTO repositoryGitHubDTO = RepositoryGitHubDTO.builder().id(id).build();
 		BDDMockito.when(this.gitHubService.obterPorIdRepositoriosGitHub(id)).thenReturn(repositoryGitHubDTO);
-		
 		ResponseEntity<String> response = this.restTemplate.getForEntity("/github/" + id, String.class);
-		
 		Assert.assertEquals(response.getStatusCodeValue(), 200);
 	}
 

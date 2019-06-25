@@ -3,13 +3,13 @@
 	updateCheck="true" monitoring="autodetect" dynamicConfig="true">
 	
 	<!-- Cache User -->
-	<cache name="findAll" maxEntriesLocalHeap="10000"
+	<cache name="findAllRepositories" maxEntriesLocalHeap="10000"
 		timeToLiveSeconds="300" eternal="false"
 		memoryStoreEvictionPolicy="LRU">
 		<pinning store="localMemory" />
 	</cache>
 	
-	<cache name="findById" maxEntriesLocalHeap="10000"
+	<cache name="findByIdRepository" maxEntriesLocalHeap="10000"
 		timeToLiveSeconds="300" eternal="false"
 		memoryStoreEvictionPolicy="LRU">
 		<pinning store="localMemory" />
